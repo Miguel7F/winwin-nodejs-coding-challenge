@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 const DB_PASSWORD=process.env.DB_PASSWORD
-const DB_USER=process.env.DB_USER //winproject
-const DB_NAME=process.env.DB_NAME //win
-const DB_URL = `mongodb+srv://${DB_NAME}:${DB_PASSWORD}@${DB_USER}.kaegzcw.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+const DB_CLUSTER=process.env.DB_CLUSTER //winproject
+const DB_USER=process.env.DB_USER//win
+const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}.kaegzcw.mongodb.net/${DB_USER}?retryWrites=true&w=majority`;
 
 const database = async () => {
   try {
