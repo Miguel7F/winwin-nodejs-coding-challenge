@@ -16,7 +16,7 @@ const orderSchema = new Schema({
 },
 { timestamps: true })
 
-orderSchema.set('toJson', {
+orderSchema.set('toJSON', {
   transform: (document, transformedObject) => {
     transformedObject.id = transformedObject._id
 

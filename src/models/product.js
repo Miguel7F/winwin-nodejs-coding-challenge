@@ -20,7 +20,7 @@ const productSchema = new Schema({
 },
 { timestamps: true })
 
-productSchema.set('toJson', {
+productSchema.set('toJSON', {
   transform: (document, transformedObject) => {
     transformedObject.id = transformedObject._id
 

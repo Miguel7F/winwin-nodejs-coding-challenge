@@ -1,9 +1,13 @@
 import { Schema, model } from 'mongoose'
 const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
   role: {
     type: String,
     enum: ['buyer', 'seller', 'admin'],
-    default: 'user'
+    default: 'buyer'
   },
   email: {
     type: String,
@@ -26,13 +30,12 @@ const userSchema = new Schema({
 },
 { timestamps: true })
 
-userSchema.set('toJson', {
-  transform: (document, transformedObject) => {
-    transformedObject.id = transformedObject._id
-
-    delete transformedObject._id
-    delete transformedObject._v
-    delete transformedObject.password
+userSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+    delete returnedObject.passwordHash
   }
 })
 
