@@ -1,16 +1,13 @@
-import database from './configuration/database.js'
-import app from './configuration/app.js'
+import database from './src/configuration/database.js'
+import app from './src/configuration/app.js'
+import dotenv from 'dotenv'
+dotenv.config()
 const PORT = process.env.PORT || 3001
-
-database()
-.then(()=>{
-  console.log('Database connected')
-})
-.then(() =>{
-  app.listen(PORT,()=>{
-    console.log(`Server run on: http://localhost:${PORT}`)
+try {
+  database()
+  app.listen(PORT, () => {
+    console.log(`Server running on: http://localhost:${PORT}`)
   })
-}) 
-.catch((error)=>{
-  console.error('Error to connect: ', error) 
-})
+} catch (error) {
+  console.log(error)
+}
