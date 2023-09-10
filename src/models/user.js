@@ -13,19 +13,18 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    lowercase: true,
-    trim: true,
     validate: {
       validator: function (value) {
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
         return emailRegex.test(value)
       },
-      message: 'La dirección de correo electrónico no es válida.'
+      message: 'The email address is not valid.'
     }
   },
   passwordHash: {
     type: String,
-    required: true
+    required: true,
+    minlength: 6
   }
 },
 { timestamps: true })
