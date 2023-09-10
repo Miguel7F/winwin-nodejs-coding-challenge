@@ -1,8 +1,8 @@
 import Product from '../models/product.js'
 
-const productPostHandler = async (attributes) => {
-  const newProduct = new Product(attributes)
+const productPostController = async (productData) => {
+  const newProduct = new Product(productData)
   return await newProduct.save()
 }
 
-export default productPostHandler
+export default productPostController
