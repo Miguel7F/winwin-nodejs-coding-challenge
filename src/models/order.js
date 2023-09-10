@@ -1,10 +1,10 @@
 import { Schema, model } from 'mongoose'
 const orderSchema = new Schema({
-  status: [{
+  status: {
     type: String,
     enum: ['pending', 'purchase', 'canceled'],
-    default: ['pending']
-  }],
+    default: 'pending'
+  },
   products: [{
     type: Schema.Types.ObjectId,
     ref: 'Product'

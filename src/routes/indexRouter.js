@@ -1,7 +1,9 @@
-import express from 'express'
-// import { productController } from '../controllers/productController.js'
-const router = express.Router()
+import productRoutes from './productRoutes.js'
+import orderRoutes from './orderRoutes.js'
+import { Router } from 'express'
+const indexRouter = Router()
 
-// router.get('/products', productController.getAllProducts)
+indexRouter.use('/product', productRoutes)
+indexRouter.use('/order', orderRoutes)
 
-export default router
+export default indexRouter
