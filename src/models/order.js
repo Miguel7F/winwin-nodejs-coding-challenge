@@ -8,9 +8,22 @@ const orderSchema = new Schema({
   products: [{
     type: Schema.Types.ObjectId,
     ref: 'Product'
-  }]
-
+  }],
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 },
 { timestamps: true })
+
+orderSchema.set('toJson', {
+  transform: (document, transformedObject) => {
+    transformedObject.id = transformedObject._id
+
+    delete transformedObject._id
+    delete transformedObject._v
+  }
+})
+
 const Order = model('order', orderSchema)
 export default Order
