@@ -5,8 +5,7 @@ const registerPostHandler = async (req, res) => {
     const confirmedUser = await registerPostController(infoUser)
     res.status(201).send(confirmedUser)
   } catch (error) {
-    console.log(error)
-    res.status(404).json({ message: error })
+    res.status(404).json({ error: error.message })
   }
 }
 export default registerPostHandler

@@ -5,8 +5,7 @@ const productPostHandler = async (req, res) => {
     const productList = await productPostController(productData)
     res.status(200).send(productList)
   } catch (error) {
-    console.log(error)
-    res.status(404).json({ message: error })
+    res.status(404).json({ error: error.message })
   }
 }
 export default productPostHandler

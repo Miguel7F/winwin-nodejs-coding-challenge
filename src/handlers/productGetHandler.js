@@ -4,7 +4,7 @@ const productGetHandler = async (req, res) => {
     const productList = await productGetController()
     res.status(200).send(productList)
   } catch (error) {
-    res.status(404).json({ message: error })
+    res.status(404).json({ error: error.message })
   }
 }
 export default productGetHandler
