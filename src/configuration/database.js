@@ -19,8 +19,8 @@ const database = async () => {
       console.error('Error connecting database: ', error)
       throw Error(error)
     })
-    .finally(() => {
-      mongoose.connection.close()
-    })
+//     .finally(() => {
+//       mongoose.connection.close()
+//     })
 }
 export default database

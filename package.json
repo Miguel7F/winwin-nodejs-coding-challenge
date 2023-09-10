@@ -21,7 +21,7 @@
     "mongoose": "7.5.0"
   },
   "devDependencies": {
-    "morgan": "1.10.0",
+    "morgan": "^1.10.0",
     "nodemon": "3.0.1",
     "standard": "^17.1.0"
   },
