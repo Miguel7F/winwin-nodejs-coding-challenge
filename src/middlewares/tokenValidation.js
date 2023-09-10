@@ -18,7 +18,6 @@ const tokenValidation = async (req, res, next) => {
     req.userId = id
     next()
   } catch (error) {
-    console.error(error)
     res.status(401).json(tokenError)
   }
 }
