@@ -7,11 +7,11 @@ const orderSchema = new Schema({
   },
   products: [{
     type: Schema.Types.ObjectId,
-    ref: 'Product'
+    ref: 'product'
   }],
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'user'
   }
 },
 { timestamps: true })

@@ -34,7 +34,7 @@ const userSchema = new Schema({
   },
   products: [{
     type: Schema.Types.ObjectId,
-    ref: 'Product'
+    ref: 'product'
   }]
 },
 { timestamps: true })
