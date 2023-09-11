@@ -1,7 +1,8 @@
 import mercadopago from 'mercadopago'
 import dotenv from 'dotenv'
 dotenv.config()
-const { PROD_ACCESS_TOKEN, URL_API } = process.env
+const { PROD_ACCESS_TOKEN } = process.env
+const URL_NGROK = 'https://cb47-179-6-14-41.ngrok.io'
 
 const payOrderMercadoPago = async (name, price, quantity) => {
   mercadopago.configure({ access_token: PROD_ACCESS_TOKEN })
@@ -15,7 +16,7 @@ const payOrderMercadoPago = async (name, price, quantity) => {
         quantity
       }
     ],
-    notification_url: `${URL_API}/order/webhook`
+    notification_url: `${URL_NGROK}/order/webhook`
     // back_urls: {
     //   success: '',
     //   pending: '',
