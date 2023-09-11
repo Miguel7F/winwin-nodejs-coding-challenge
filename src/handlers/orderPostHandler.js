@@ -1,11 +1,13 @@
 import orderPostController from '../controllers/orderPostController.js'
 const orderPostHandler = async (req, res) => {
   try {
-    const orderData = req.body
-    const orderList = await orderPostController(orderData)
-    res.status(200).send(orderList)
+    const { productId, quantity } = req.body
+    const { userId } = req
+
+    const createdOrder = await orderPostController(productId, quantity, userId)
+    res.status(201).send(createdOrder)
   } catch (error) {
-    res.status(404).json({ error: error.message })
+    res.status(400).json({ error: error.message })
   }
 }
 export default orderPostHandler

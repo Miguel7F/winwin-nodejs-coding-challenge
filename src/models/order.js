@@ -5,13 +5,34 @@ const orderSchema = new Schema({
     enum: ['pending', 'purchase', 'canceled'],
     default: 'pending'
   },
-  products: [{
+  product: {
     type: Schema.Types.ObjectId,
     ref: 'product'
-  }],
+  },
+  quantity: {
+    type: Number,
+    required: true,
+    default: 1
+  },
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'user'
+  },
+  seller: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
+  },
+  preferenceId: {
+    type: String,
+    unique: true
+  },
+  orderId: {
+    type: String
+    // unique: true
+  },
+  mercadoPagoOperation: {
+    type: String
+    // unique: true
   }
 },
 { timestamps: true })
@@ -21,7 +42,7 @@ orderSchema.set('toJSON', {
     transformedObject.id = transformedObject._id
 
     delete transformedObject._id
-    delete transformedObject._v
+    delete transformedObject.__v
   }
 })
 
