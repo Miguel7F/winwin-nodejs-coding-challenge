@@ -1,7 +1,7 @@
 import User from '../models/user.js'
 
-const productGetController = async (userID) => {
-  const user = await User.findById(userID, 'role products').populate('products')
+const productGetController = async (userId) => {
+  const user = await User.findById(userId, 'role products').populate('products')
   if (!user.role) throw Error('There is an error with this user. Contact administrator')
   if (user.role !== 'seller') throw Error('This user has no products assigned')
 

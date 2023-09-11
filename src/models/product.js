@@ -34,7 +34,7 @@ productSchema.set('toJSON', {
     transformedObject.id = transformedObject._id
 
     delete transformedObject._id
-    delete transformedObject._v
+    delete transformedObject.__v
   }
 })
 
