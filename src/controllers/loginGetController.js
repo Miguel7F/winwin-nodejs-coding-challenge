@@ -22,7 +22,7 @@ const loginGetController = async ({ email, password }) => {
   const token = jwt.sign(
     dataToken,
     JWT_SECRET,
-    { expiresIn: 60 * 2 })
+    { expiresIn: 60 * 30 })
 
   return {
     name: userConfirmed.name,
