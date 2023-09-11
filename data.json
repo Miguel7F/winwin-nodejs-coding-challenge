@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Miguel",
+    "email": "uncorreo@gmail.com",
+    "password": "estoEsUnaPassword",
+    "role": "Seller"
+  },
+  {
+    "name": "win",
+    "email": "correowin@gmail.com",
+    "password": "passwordWin",
+    "role": "Seller"
+  },
+  {
+    "name": "COMPRADOR 1",
+    "role": "buyer",
+    "email": "comprador1@gmail.com",
+    "password": "Comprador1"
+  },
+  {
+    "name": "COMPRADOR 2",
+    "role": "buyer",
+    "email": "comprador2@gmail.com",
+    "password": "Comprador2"
+  },
+  {
+    "name": "COMPRADOR 3",
+    "role": "buyer",
+    "email": "comprador3@gmail.com",
+    "password": "Comprador3"
+  },
+  {
+    "name": "COMPRADOR 4",
+    "role": "buyer",
+    "email": "comprador4@gmail.com",
+    "password": "Comprador4"
+  },
+  {
+    "name": "COMPRADOR 5",
+    "role": "buyer",
+    "email": "Comprador5@gmail.com",
+    "password": "Comprador5"
+  }
+]
